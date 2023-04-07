@@ -10,6 +10,16 @@ const routes: RouteRecordRaw[] = [
     path: '/canvas',
     name: 'Canvas',
     component: () => import('@/pages/canvas/index.vue')
+  },
+  {
+    path: '/canvas/babysbreath',
+    name: 'Babysbreatn',
+    component: () => import('@/pages/canvas/babysbreath.vue')
+  },
+  {
+    path: '/canvas/retroSnaker',
+    name: 'RetroSnaker',
+    component: () => import('@/pages/canvas/retroSnaker.vue')
   }
 ]
 
