@@ -1,4 +1,4 @@
-import {createRouter, createWebHistory, RouteRecordRaw} from "vue-router";
+import {createRouter, createWebHistory, RouteRecordRaw} from "vue-router"
 
 const routes: RouteRecordRaw[] = [
   {
@@ -20,6 +20,11 @@ const routes: RouteRecordRaw[] = [
     path: '/canvas/retroSnaker',
     name: 'RetroSnaker',
     component: () => import('@/pages/canvas/retroSnaker.vue')
+  },
+  {
+    path: '/BDmap',
+    name: 'BDmap',
+    component: () => import('@/pages/BDmap/index.vue')
   }
 ]
 
