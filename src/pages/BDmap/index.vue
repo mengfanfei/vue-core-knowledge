@@ -3,15 +3,13 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { useMap } from '../../hooks/map'
 
-  onMounted(() => {
-    console.log(window)
-    const map = new window.BMapGL.Map("myBDmap")        // 创建地图实例 
-    const point = new window.BMapGL.Point(116.404, 39.915)  // 创建点坐标 
-    map.centerAndZoom(point, 10)
-    map.enableScrollWheelZoom(true)
-  })
+const func = () => {
+  console.log(bdMap.value)
+}
+
+const { bdMap, BMapGL} = useMap('myBDmap', {lng: 118, lat: 60}, 11, func)
 </script>
 
 <style scoped>
