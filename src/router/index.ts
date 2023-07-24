@@ -22,6 +22,11 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/pages/canvas/retroSnaker.vue')
   },
   {
+    path: '/canvas/particle',
+    name: 'RetroSnaker',
+    component: () => import('@/pages/canvas/particle.vue')
+  },
+  {
     path: '/BDmap',
     name: 'BDmap',
     component: () => import('@/pages/BDmap/index.vue')
