@@ -4,7 +4,7 @@
   </canvas>
 </template>
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted, reactive } from 'vue'
 
 let canvas: HTMLCanvasElement, context: CanvasRenderingContext2D
 
@@ -20,6 +20,26 @@ for (let i = 0; i < 150; i++) {
     ya: Math.random() * 2 - 1,
     max: 150 // 连线的最大距离 px
   })
+}
+
+const warea = reactive<{
+  x: null | number,
+  y: null | number,
+  max: number
+}>({
+  x: null,
+  y: null,
+  max: 200
+})
+
+window.onmousemove = (e) => {
+  warea.x = e.clientX
+  warea.y = e.clientY
+}
+
+window.onmouseout = () => {
+  warea.x = null
+  warea.y = null
 }
 
 /**
@@ -40,7 +60,7 @@ const drawParticle = () => {
     item.xa *= item.x > canvas.width || item.x < 0 ? -1 : 1
     item.ya *= item.y > canvas.height || item.y < 0 ? -1 : 1
     context.fillStyle = 'rgba(255,218,27,1)'
-    context.fillRect(item.x - 1, item.y - 1, 2, 2)
+    context.fillRect(item.x, item.y, 2, 2)
     drawParticleLine(item, dots)
   })
 }
@@ -49,12 +69,18 @@ const drawParticle = () => {
  * 绘制粒子连接线
  */
 const drawParticleLine = (dot: any, dots: any[]) => {
-  for (const item of dots) {
+  // 加入鼠标粒子
+  const ndots = [warea].concat(dots)
+  for (const item of ndots) {
     if (dot === item || item.x === null || item.y === null) continue
     const xc = dot.x - item.x
     const yc = dot.y - item.y
     const distance = Math.sqrt(xc*xc + yc*yc)
     if (distance < item.max) {
+      if (item === warea && distance > item.max / 2) {
+        dot.x -= xc * 0.03
+        dot.Y -= yc * 0.03
+      }
       const ratio = (item.max - distance) /item.max
       context.beginPath()
       context.lineWidth = ratio / 2
