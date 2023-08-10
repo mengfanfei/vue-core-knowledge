@@ -35,6 +35,11 @@ const routes: RouteRecordRaw[] = [
     path: '/BDmap',
     name: 'BDmap',
     component: () => import('@/pages/BDmap/index.vue')
+  },
+  {
+    path: '/threejs/firstThree',
+    name: 'FirstThree',
+    component: () => import('@/pages/ThreeJs/firstThree.vue')
   }
 ]
 
