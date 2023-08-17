@@ -37,19 +37,24 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/pages/BDmap/index.vue')
   },
   {
-    path: '/threejs/firstThree',
+    path: '/threejs/three1',
     name: 'FirstThree',
     component: () => import('@/pages/ThreeJs/firstThree.vue')
   },
   {
-    path: '/threejs/secondThree',
+    path: '/threejs/three2',
     name: 'SecondThree',
     component: () => import('@/pages/ThreeJs/secondThree.vue')
   },
   {
-    path: '/threejs/thirdThree',
+    path: '/threejs/three3',
     name: 'ThirdThree',
     component: () => import('@/pages/ThreeJs/thirdThree.vue')
+  },
+  {
+    path: '/threejs/three4',
+    name: 'FourThree',
+    component: () => import('@/pages/ThreeJs/fourThree.vue')
   }
 ]
 
