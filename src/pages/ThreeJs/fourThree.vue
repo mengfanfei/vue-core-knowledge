@@ -11,7 +11,8 @@ const scene = new Scene()
 // 2. 创建相机
 const camera = new PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000)
 // 设置相机的位置
-camera.position.set(10, 0, 0)
+camera.position.set(5, 5, 5)
+
 // 3. 创建渲染器
 const renderer = new WebGLRenderer()
 // 设置渲染器的尺寸大小
