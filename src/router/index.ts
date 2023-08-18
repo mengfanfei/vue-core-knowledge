@@ -55,6 +55,11 @@ const routes: RouteRecordRaw[] = [
     path: '/threejs/three4',
     name: 'FourThree',
     component: () => import('@/pages/ThreeJs/fourThree.vue')
+  },
+  {
+    path: '/threejs/three5',
+    name: 'three5',
+    component: () => import('@/pages/ThreeJs/three5.vue')
   }
 ]
 
