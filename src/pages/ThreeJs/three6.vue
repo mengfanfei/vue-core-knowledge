@@ -3,46 +3,47 @@
 </template>
 
 <script setup lang="ts">
-import { AmbientLight, AxesHelper, CircleGeometry, DirectionalLight, DoubleSide, Mesh, MeshBasicMaterial, MeshLambertMaterial, PerspectiveCamera, PlaneGeometry, Scene, SphereGeometry, TextureLoader, WebGLRenderer } from 'three';
-import earthImg from '@/assets/imgs/earth.jpg'
-import pandaImg from '@/assets/imgs/panda.jpg'
+import { AmbientLight, AxesHelper, CircleGeometry, DirectionalLight, DoubleSide, Mesh, MeshBasicMaterial, MeshLambertMaterial, PerspectiveCamera, PlaneGeometry, RepeatWrapping, Scene, SphereGeometry, TextureLoader, WebGLRenderer } from 'three';
+import cizhuanImg from '@/assets/imgs/瓷砖.jpg'
 import { onMounted } from 'vue';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { text } from 'd3';
 // 场景
 const scene = new Scene()
 // 球状几何体
 // const geometry = new SphereGeometry(50)
 // 矩形几何体
-const geometry = new PlaneGeometry(200, 100)
+const geometry = new PlaneGeometry(2000, 1000)
 // 圆形平面几何体
 // const geometry = new CircleGeometry(50, 100)
 // 创建纹理贴图加载器
 const textureLoader = new TextureLoader()
 // 加载图像返回一个纹理对象
-const texture = textureLoader.load(pandaImg)
+const texture = textureLoader.load(cizhuanImg)
+texture.wrapS = RepeatWrapping
+texture.wrapT = RepeatWrapping
+texture.repeat.set(30,15)
 // 创建材质
 const material = new MeshBasicMaterial({
   map: texture,
-  side: DoubleSide
+  // side: DoubleSide
 })
 // 创建模型
 const mesh = new Mesh(geometry, material)
+mesh.rotateX(-Math.PI/2)
 // 将模型添加到场景中
 scene.add(mesh)
-console.log(geometry.attributes.position)
-console.log(geometry.index)
-console.log(geometry.attributes.uv)
 
 // 光源设置
 const directionalLight = new DirectionalLight(0xffffff, 1)
-directionalLight.position.set(100, 60, 0)
+directionalLight.position.set(100, 60, 50)
 scene.add(directionalLight)
 const ambient = new AmbientLight(0xffffff, 1)
 scene.add(ambient)
 
 // 创建相机
 const camera = new PerspectiveCamera(30, window.innerWidth/window.innerHeight, 1, 3000)
-camera.position.set(292, 233, 182)
+camera.position.set(0, 333, 285)
 camera.lookAt(0,0,0)
 
 // 渲染器
