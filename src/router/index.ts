@@ -80,6 +80,11 @@ const routes: RouteRecordRaw[] = [
     path: '/threejs/three9',
     name: 'three9',
     component: () => import('@/pages/ThreeJs/three9.vue')
+  },
+  {
+    path: '/threejs/car',
+    name: 'car',
+    component: () => import('@/pages/ThreeJs/car.vue')
   }
 ]
 
