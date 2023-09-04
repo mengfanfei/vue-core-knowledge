@@ -3,11 +3,12 @@
 </template>
 
 <script setup lang="ts">
-import { AmbientLight, DirectionalLight, DoubleSide, EquirectangularReflectionMapping, Mesh, MeshStandardMaterial, PerspectiveCamera, PlaneGeometry, Scene, WebGLRenderer } from 'three';
+import { AmbientLight, DirectionalLight, DoubleSide, EquirectangularReflectionMapping, MathUtils, Mesh, MeshStandardMaterial, PerspectiveCamera, PlaneGeometry, Scene, WebGLRenderer } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader';
+import { GUI } from 'three/examples/jsm/libs/lil-gui.module.min.js';
 import { onMounted, ref } from 'vue';
 
 const carRef = ref<HTMLDivElement | null>(null);
@@ -43,20 +44,34 @@ light.position.set(1, 1, 1);
 scene.add(light);
 
 // 添加地面
-const planeGeometry = new PlaneGeometry(50, 50);
-const planeMaterial = new MeshStandardMaterial({
-  color: 0xffffff,
-  side: DoubleSide,
-});
-const plane = new Mesh(planeGeometry, planeMaterial);
-plane.rotation.x = -Math.PI / 2;
-plane.receiveShadow = true; // 接收阴影
-scene.add(plane);
+// const planeGeometry = new PlaneGeometry(50, 50);
+// const planeMaterial = new MeshStandardMaterial({
+//   color: 0xffffff,
+//   side: DoubleSide,
+// });
+// const plane = new Mesh(planeGeometry, planeMaterial);
+// plane.rotation.x = -Math.PI / 2;
+// plane.receiveShadow = true; // 接收阴影
+// scene.add(plane);
 
 // 添加控制组件
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true; // 开启阻尼
 controls.dampingFactor = 0.05; // 阻尼系数
+controls.maxPolarAngle = MathUtils.degToRad(85); // 最大角度
+controls.minDistance = 20; // 最小距离
+controls.maxDistance = 80; // 最大距离
+controls.enablePan = false; // 禁止平移
+
+// 添加gui
+const gui = new GUI();
+// gui
+//   .add(controls, 'enableDamping')
+//   .name('阻尼')
+//   .onChange((value: boolean) => {
+//     controls.enableDamping = value;
+//   }
+//   );
 
 // 添加模型
 const dracoLoader = new DRACOLoader();
@@ -66,6 +81,8 @@ loader.setDRACOLoader(dracoLoader);
 // 加载模型
 loader.load('/car/Lamborghini.glb', (gltf) => {
   scene.add(gltf.scene);
+  // 
+  gltf.scene.children[0].scale.multiplyScalar(4)
 });
 
 // 渲染
