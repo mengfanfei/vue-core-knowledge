@@ -3,10 +3,11 @@
 </template>
 
 <script setup lang="ts">
-import { AmbientLight, DirectionalLight, DoubleSide, Mesh, MeshStandardMaterial, PerspectiveCamera, PlaneGeometry, Scene, WebGLRenderer } from 'three';
+import { AmbientLight, DirectionalLight, DoubleSide, EquirectangularReflectionMapping, Mesh, MeshStandardMaterial, PerspectiveCamera, PlaneGeometry, Scene, WebGLRenderer } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader';
 import { onMounted, ref } from 'vue';
 
 const carRef = ref<HTMLDivElement | null>(null);
@@ -25,6 +26,14 @@ renderer.setSize(window.innerWidth, window.innerHeight); // 设置渲染器的�
 // renderer.setClearColor(0x000000, 1); // 设置背景颜色
 renderer.setPixelRatio(window.devicePixelRatio); // 设置像素比
 renderer.shadowMap.enabled = true; // 开启阴影
+
+// 加载环境贴图
+const rgbeLoader = new RGBELoader()
+rgbeLoader.load('/car/park_parking_4k.hdr', (texture) => {
+  texture.mapping = EquirectangularReflectionMapping
+  scene.background = texture
+  scene.environment = texture
+})
 
 // 添加环境光
 scene.add(new AmbientLight(0xffffff, 1));
