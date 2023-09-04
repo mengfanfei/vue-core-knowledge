@@ -1,14 +1,18 @@
 <template>
   <div ref="carRef"></div>
+  <div v-if="!complete" class="fixed top-0 left-0 right-0 bottom-0 z-10 bg-white text-black flex justify-center items-center text-xl">{{ progressValue }}</div>
 </template>
 
 <script setup lang="ts">
-import { AmbientLight, DirectionalLight, DoubleSide, EquirectangularReflectionMapping, Mesh, MeshStandardMaterial, PerspectiveCamera, PlaneGeometry, Scene, WebGLRenderer } from 'three';
+import { AmbientLight, AxesHelper, DefaultLoadingManager, DirectionalLight, DoubleSide, EquirectangularReflectionMapping, LoadingManager, Mesh, MeshStandardMaterial, PerspectiveCamera, PlaneGeometry, Scene, Vector3, WebGLRenderer } from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader';
 import { onMounted, ref } from 'vue';
+
+const progressValue = ref('0%')
+const complete = ref(false)
 
 const carRef = ref<HTMLDivElement | null>(null);
 
@@ -17,6 +21,7 @@ const scene = new Scene();
 // 创建相机
 const camera = new PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
 camera.position.set(3, 1.5, 4);
+camera.lookAt(0,0,0);
 
 // 创建渲染器
 const renderer = new WebGLRenderer({
@@ -30,9 +35,10 @@ renderer.shadowMap.enabled = true; // 开启阴影
 // 加载环境贴图
 const rgbeLoader = new RGBELoader()
 rgbeLoader.load('/car/park_parking_4k.hdr', (texture) => {
-  texture.mapping = EquirectangularReflectionMapping
-  scene.background = texture
-  scene.environment = texture
+  // mapping: 图像将如何应用到物体（对象）上。默认值是THREE.UVMapping对象类型， 即UV坐标将被用于纹理映射
+  texture.mapping = EquirectangularReflectionMapping // 反射
+  scene.background = texture // 在渲染场景的时候将设置背景，且背景总是首先被渲染的
+  scene.environment = texture // 该纹理贴图将会被设为场景中所有物理材质的环境贴图，该属性不能够覆盖已存在的、已分配给 MeshStandardMaterial.envMap 的贴图
 })
 
 // 添加环境光
@@ -42,21 +48,26 @@ const light = new DirectionalLight(0xffffff, 1);
 light.position.set(1, 1, 1);
 scene.add(light);
 
-// 添加地面
-const planeGeometry = new PlaneGeometry(50, 50);
-const planeMaterial = new MeshStandardMaterial({
-  color: 0xffffff,
-  side: DoubleSide,
-});
-const plane = new Mesh(planeGeometry, planeMaterial);
-plane.rotation.x = -Math.PI / 2;
-plane.receiveShadow = true; // 接收阴影
-scene.add(plane);
+// // 添加地面
+// const planeGeometry = new PlaneGeometry(50, 50);
+// const planeMaterial = new MeshStandardMaterial({
+//   color: 0xffffff,
+//   side: DoubleSide,
+// });
+// const plane = new Mesh(planeGeometry, planeMaterial);
+// plane.rotation.x = -Math.PI / 2;
+// plane.receiveShadow = true; // 接收阴影
+// scene.add(plane);
 
 // 添加控制组件
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true; // 开启阻尼
 controls.dampingFactor = 0.05; // 阻尼系数
+controls.target = new Vector3(0, 0, 0); // 设置相机焦点
+
+// 添加坐标系
+const axesHelper = new AxesHelper(1000)
+scene.add(axesHelper)
 
 // 添加模型
 const dracoLoader = new DRACOLoader();
@@ -65,8 +76,24 @@ const loader = new GLTFLoader();
 loader.setDRACOLoader(dracoLoader);
 // 加载模型
 loader.load('/car/Lamborghini.glb', (gltf) => {
+  // gltf.scene.position.y = -800 // 模型位置
+  // gltf.scene.scale.set(50, 50, 50) // 模型缩放
   scene.add(gltf.scene);
 });
+
+// 添加全局加载管理器
+DefaultLoadingManager.onLoad = () => {
+  complete.value = true // 加载完成
+}
+DefaultLoadingManager.onProgress = (url, itemsLoaded, itemsTotal) => {
+  progressValue.value = (itemsLoaded / itemsTotal * 100).toFixed(0) + '%' // 加载进度
+}
+DefaultLoadingManager.onError = (url) => {
+  console.log(`There was an error loading ${url}`) // 加载错误
+}
+
+
+
 
 // 渲染
 const render = () => {
