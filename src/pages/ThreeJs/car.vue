@@ -10,6 +10,7 @@ import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 import { RGBELoader } from 'three/examples/jsm/loaders/RGBELoader';
 import { GUI } from 'three/examples/jsm/libs/lil-gui.module.min.js';
+import { GroundProjectedSkybox } from 'three/examples/jsm/objects/GroundProjectedSkybox';
 import { onMounted, ref } from 'vue';
 
 const progressValue = ref('0%')
@@ -20,7 +21,7 @@ const carRef = ref<HTMLDivElement | null>(null);
 // 创建场景
 const scene = new Scene();
 // 创建相机
-const camera = new PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+const camera = new PerspectiveCamera(40, window.innerWidth/window.innerHeight, 1, 1000);
 camera.position.set(3, 1.5, 4);
 camera.lookAt(0,0,0);
 
