@@ -13,7 +13,7 @@ import {
   DoubleSide,
   EquirectangularReflectionMapping,
   MathUtils,
-  Mesh,
+  Mesh, MeshPhysicalMaterial,
   MeshStandardMaterial,
   PerspectiveCamera,
   PlaneGeometry,
@@ -109,15 +109,36 @@ const loader = new GLTFLoader();
 loader.setDRACOLoader(dracoLoader);
 // 加载模型
 loader.load('/car/Lamborghini.glb', (gltf) => {
+  const material = new MeshPhysicalMaterial({
+    color: 0xffffff, // 模型颜色
+    metalness: 0.1, // 金属度
+    roughness: 0.1, // 粗糙度
+    transparent: true, // 是否透明
+    transmission: 1, // 透明度
+  })
+  const material2 = new MeshPhysicalMaterial({
+    color: 0xffffff,
+    metalness: 0.8, // 金属度
+    roughness: 0.1, // 粗糙度
+    clearcoat: 1, // 凸面反射
+    clearcoatRoughness: 0.1, // 凸面粗糙度
+  })
   // gltf.scene.position.y = -800 // 模型位置
   // gltf.scene.scale.set(50, 50, 50) // 模型缩放
   gltf.scene.traverse((object) => {
     if (object.type === 'Mesh') {
-      if (object.name === 'object_4') {
-        object.material.color = new Color(0xff0000)
+      // if (object.name === 'Object_4') {
+      //   object.material.color = new Color(0xff0000)
+      // }
+      if (object.name === 'Object_79' || object.name === 'Object_90') {
+        object.material = material
+      }
+      if (object.name === 'Object_110' || object.name === 'Object_64') {
+        object.material = material2
       }
     }
   })
+  console.log(gltf.scene.getObjectByName('Object_79'))
   scene.add(gltf.scene);
   // 
   gltf.scene.children[0].scale.multiplyScalar(4)
