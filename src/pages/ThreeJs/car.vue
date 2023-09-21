@@ -14,13 +14,13 @@ import {
   EquirectangularReflectionMapping,
   MathUtils,
   Mesh, MeshPhysicalMaterial,
-  MeshStandardMaterial,
+  MeshStandardMaterial, Object3D,
   PerspectiveCamera,
-  PlaneGeometry,
-  Scene,
+  PlaneGeometry, Raycaster,
+  Scene, Vector2,
   Vector3,
   WebGLRenderer
-} from 'three';
+} from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
@@ -38,6 +38,9 @@ const params = {
   height: 20,
   radius: 440
 }
+
+const raycaster = new Raycaster()
+const mouse = new Vector2(1, 1)
 
 // 创建场景
 const scene = new Scene();
@@ -102,6 +105,8 @@ controls.update()
 // const axesHelper = new AxesHelper(1000)
 // scene.add(axesHelper)
 
+let mesh: Object3D<Event>
+
 // 添加模型
 const dracoLoader = new DRACOLoader();
 dracoLoader.setDecoderPath('/draco/gltf/')
@@ -138,9 +143,8 @@ loader.load('/car/Lamborghini.glb', (gltf) => {
       }
     }
   })
-  console.log(gltf.scene.getObjectByName('Object_79'))
   scene.add(gltf.scene);
-  // 
+  mesh = gltf.scene
   gltf.scene.children[0].scale.multiplyScalar(4)
 });
 
@@ -166,6 +170,9 @@ const render = () => {
   renderer.render(scene, camera);
   // controls.update();
   // requestAnimationFrame(render);
+  raycaster.setFromCamera(mouse, camera)
+  const intersection = mesh && raycaster.intersectObject(mesh)
+  console.log(intersection)
 };
 
 
@@ -181,6 +188,14 @@ window.addEventListener('resize', () => {
   renderer.setSize(window.innerWidth, window.innerHeight);
   renderer.render(scene, camera);
 });
+
+const onMouseMove = (event: MouseEvent) => {
+  event.preventDefault()
+  mouse.x = (event.clientX / window.innerWidth) * 2 - 1
+  mouse.y = (event.clientY / window.innerHeight) * 2 - 1
+}
+document.addEventListener('mousemove', onMouseMove)
+
 
 // 添加gui
 const gui = new GUI();
