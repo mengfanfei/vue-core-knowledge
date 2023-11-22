@@ -88,8 +88,13 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/threejs/map',
-    name: 'car',
+    name: 'map',
     component: () => import('@/pages/ThreeJs/map.vue')
+  },
+  {
+    path: '/videoLive/flvjs',
+    name: 'flvjs',
+    component: () => import('@/pages/videoLive/flvjs.vue')
   }
 ]
 
