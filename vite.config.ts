@@ -17,13 +17,13 @@ export default defineConfig({
       '@': resolve(__dirname, 'src')
     },
   },
-  // server: {
-  //   proxy: {
-  //     '/api': {
-  //       target: 'https://sd-sme.caiicloud.com:7094',
-  //       changeOrigin: true,
-  //       rewrite: (path) => path.replace(/^\/api/, '')
-  //     }
-  //   }
-  // }
+  server: {
+    proxy: {
+      '/api': {
+        target: 'https://sd-sme.caiicloud.com',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '')
+      }
+    }
+  }
 })
