@@ -1,6 +1,6 @@
 <template>
   <div>
-    <FlvVideo url="https://sf1-hscdn-tos.pstatp.com/obj/media-fe/xgplayer_doc_video/flv/xgplayer-demo-360p.flv" />
+    <FlvVideo url="https://live.goodiptv.club/api/bestv.php?id=wxtyhd8m/8000000" />
   </div>
 </template>
 

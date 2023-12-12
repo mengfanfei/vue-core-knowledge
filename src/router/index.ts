@@ -95,6 +95,11 @@ const routes: RouteRecordRaw[] = [
     path: '/videoLive/flvjs',
     name: 'flvjs',
     component: () => import('@/pages/videoLive/flvjs.vue')
+  },
+  {
+    path: '/charts/echarts',
+    name: 'echarts',
+    component: () => import('@/pages/charts/echarts.vue')
   }
 ]
 
