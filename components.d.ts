@@ -9,6 +9,9 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    ACol: typeof import('ant-design-vue/es')['Col']
+    ADivider: typeof import('ant-design-vue/es')['Divider']
+    ARow: typeof import('ant-design-vue/es')['Row']
     Charts: typeof import('./src/components/Charts.vue')['default']
     ChartType: typeof import('./src/components/ChartType.vue')['default']
     FlvVideo: typeof import('./src/components/FlvVideo.vue')['default']
