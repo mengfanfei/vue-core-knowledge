@@ -6,24 +6,24 @@ hero:
   name: "前端Meng"
   text: "一个前端工作者的笔记集合"
 #  tagline: 向大前端进阶
-  actions:
-    - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
+#  actions:
+#    - theme: brand
+#      text: Markdown Examples
+#      link: /markdown-examples
+#    - theme: alt
+#      text: API Examples
+#      link: /api-examples
   image:
     src: /vitepress-logo-large.webp
     alt: 前端Meng
 
-features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+#features:
+#  - title: Feature A
+#    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+#  - title: Feature B
+#    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+#  - title: Feature C
+#    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
 
 <style>
