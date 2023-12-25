@@ -33,8 +33,22 @@ export interface DataOption {
    * 饼图的原点，即配置中的series.center
    */
   pieCenter?: string | number | (string | number)[],
+  /**
+   * 南丁格尔玫瑰图
+   */
   roseType?: 'radius' | 'area',
+  /**
+   * 饼图的文本标签是否展示
+   */
   labelShow?: boolean,
+  legendPosition?: {
+    top?: string | number,
+    left?: string | number,
+    right?: string | number,
+    bottom?: string | number
+  },
+  legendWidth?: number | string,
+  legendHeight?: number | string
 }
 
 export function getOptions(data: DataOption): PieOption {
@@ -43,6 +57,12 @@ export function getOptions(data: DataOption): PieOption {
     title: {},
     legend: {
       show: data.legendShow,
+      top: data.legendPosition?.top,
+      left: data.legendPosition?.right ? undefined : data.legendPosition?.left || 'center',
+      right: data.legendPosition?.right,
+      bottom: data.legendPosition?.bottom,
+      width: data.legendWidth || 'auto',
+      height: data.legendHeight || 'auto',
     },
     tooltip: {
       trigger: 'item',
@@ -62,8 +82,12 @@ export function getOptions(data: DataOption): PieOption {
         // borderRadius: 5
       },
       label: {
-        show: data.labelShow !== false
+        show: data.labelShow !== false,
+        alignTo: 'none',
       },
+      // labelLine: {
+      //   length: 5,
+      // },
       emphasis: {
         itemStyle: {
           shadowBlur: 10,

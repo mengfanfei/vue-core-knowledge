@@ -25,19 +25,40 @@ const data2 = ref<DataOption>({
   ],
   radius: ['40%', '70%'],
   labelShow: false,
+  legendPosition: {
+    right: 20,
+    top: 'center',
+  },
+  legendWidth: '50%',
+  pieCenter: ['30%', '50%']
+})
+const data3 = ref<DataOption>({
+  legendShow: true,
+  dataArr: [
+    { value: 335, name: '直接访问' },
+    { value: 310, name: '邮件营销' },
+    { value: 234, name: '联盟广告' },
+    { value: 135, name: '视频广告' },
+    { value: 548, name: '搜索引擎' },
+  ],
+  radius: ['10%', '75%'],
+  labelShow: true,
+  roseType: 'area',
 })
 </script>
 
 <template>
   <a-divider orientation="left">饼状图</a-divider>
   <a-row>
-    <a-col :xs="24" :sm="12" :md="12" :lg="8">
+    <a-col :xs="24" :sm="24" :md="12" :lg="12" :xl="8">
       <PieChart :data="data1" style="height: 300px; width: 100%;"></PieChart>
     </a-col>
-    <a-col :xs="24" :sm="12" :md="12" :lg="8">
+    <a-col :xs="24" :sm="24" :md="12" :lg="12" :xl="8">
       <PieChart :data="data2" style="height: 300px; width: 100%;"></PieChart>
     </a-col>
-    <a-col :xs="24" :sm="12" :md="12" :lg="8">3</a-col>
+    <a-col :xs="24" :sm="24" :md="12" :lg="12" :xl="8">
+      <PieChart :data="data3" style="height: 300px; width: 100%;"></PieChart>
+    </a-col>
   </a-row>
 </template>
 

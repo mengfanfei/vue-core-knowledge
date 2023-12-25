@@ -92,9 +92,9 @@ const change = () => {
 onMounted(() => {
   change()
 })
-onBeforeUnmount(() => {
-  myChart.value?.dispose()
-})
+// onBeforeUnmount(() => {
+//   myChart.value?.dispose()
+// })
 </script>
 
 <template>
