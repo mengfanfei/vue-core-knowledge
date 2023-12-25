@@ -1,16 +1,48 @@
 <script setup lang="ts">
 
+import PieChart from '@/components/chartModules/PieChart/PieChart.vue'
+import { ref } from 'vue'
+import { DataOption } from '@/components/chartModules/PieChart/echarts.options'
+
+const data1 = ref<DataOption>({
+  legendShow: true,
+  dataArr: [
+    { value: 335, name: '直接访问' },
+    { value: 310, name: '邮件营销' },
+    { value: 234, name: '联盟广告' },
+    { value: 135, name: '视频广告' },
+    { value: 1548, name: '搜索引擎' },
+  ]
+})
+const data2 = ref<DataOption>({
+  legendShow: true,
+  dataArr: [
+    { value: 335, name: '直接访问' },
+    { value: 310, name: '邮件营销' },
+    { value: 234, name: '联盟广告' },
+    { value: 135, name: '视频广告' },
+    { value: 1548, name: '搜索引擎' },
+  ],
+  radius: ['40%', '70%'],
+  labelShow: false,
+})
 </script>
 
 <template>
-  <a-divider orientation="left">柱状图</a-divider>
-  <a-row :gutter="[16, 16]">
-    <a-col :xs="24" :sm="12" :md="12" :lg="8">1</a-col>
-    <a-col :xs="24" :sm="12" :md="12" :lg="8">2</a-col>
+  <a-divider orientation="left">饼状图</a-divider>
+  <a-row>
+    <a-col :xs="24" :sm="12" :md="12" :lg="8">
+      <PieChart :data="data1" style="height: 300px; width: 100%;"></PieChart>
+    </a-col>
+    <a-col :xs="24" :sm="12" :md="12" :lg="8">
+      <PieChart :data="data2" style="height: 300px; width: 100%;"></PieChart>
+    </a-col>
     <a-col :xs="24" :sm="12" :md="12" :lg="8">3</a-col>
   </a-row>
 </template>
 
 <style scoped>
-
+.ant-col {
+  border: 1px solid rgba(0,0,0,0.1);
+}
 </style>

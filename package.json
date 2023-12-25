@@ -12,7 +12,8 @@
     "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
-    "ant-design-vue": "^3.2.17",
+    "@tauri-apps/api": "^1.5.3",
+    "ant-design-vue": "^4.0.8",
     "d3": "^7.8.3",
     "echarts": "^5.4.3",
     "element-resize-detector": "^1.2.4",
@@ -25,6 +26,7 @@
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
+    "@tauri-apps/cli": "^1.5.9",
     "@types/d3": "^7.4.0",
     "@types/element-resize-detector": "^1.1.6",
     "@types/lodash-es": "^4.17.12",

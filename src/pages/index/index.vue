@@ -10,9 +10,10 @@
     </div>
     <div>
       <button @click="handleClick('canvas')">canvas</button>
-      <button>Echarts</button>
+      <button @click="handleClick('charts/echarts')">Echarts</button>
       <button>webGL</button>
       <button>three.js</button>
+      <button @click="handleClick('tauri/index')">Tauri</button>
     </div>
   </div>
 </template>

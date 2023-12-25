@@ -9,12 +9,15 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    AButton: typeof import('ant-design-vue/es')['Button']
     ACol: typeof import('ant-design-vue/es')['Col']
     ADivider: typeof import('ant-design-vue/es')['Divider']
+    AModal: typeof import('ant-design-vue/es')['Modal']
     ARow: typeof import('ant-design-vue/es')['Row']
     Charts: typeof import('./src/components/Charts.vue')['default']
     ChartType: typeof import('./src/components/ChartType.vue')['default']
     FlvVideo: typeof import('./src/components/FlvVideo.vue')['default']
+    PieChart: typeof import('./src/components/chartModules/PieChart/PieChart.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

@@ -31,7 +31,7 @@ body {
 /*  display: flex;*/
 /*  place-items: center;*/
   min-width: 320px;
-  min-height: 100vh;
+  /*min-height: 100vh;*/
 }
 
 h1 {
@@ -71,6 +71,6 @@ button:focus-visible {
   }
 }
 
-#app {
-  height: 100vh;
-}
+/*#app {*/
+/*  height: 100vh;*/
+/*}*/

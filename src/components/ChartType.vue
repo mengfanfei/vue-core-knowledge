@@ -16,20 +16,20 @@ import {
 import { LabelLayout, UniversalTransition } from 'echarts/features'
 // 引入canvas渲染器，注意引入 CanvasRenderer 或者 SVGRenderer 是必须的一步
 import { CanvasRenderer } from 'echarts/renderers'
-import type { BarSeriesOption, LineSeriesOption } from 'echarts/charts'
+// import type { BarSeriesOption, LineSeriesOption } from 'echarts/charts'
 import type { EChartsOption } from 'echarts'
-import type { TitleComponentOption, TooltipComponentOption, GridComponentOption, DatasetComponentOption } from 'echarts/components'
-import type { ComposeOption } from 'echarts/core'
+// import type { TitleComponentOption, TooltipComponentOption, GridComponentOption, DatasetComponentOption } from 'echarts/components'
+// import type { ComposeOption } from 'echarts/core'
 
-/**
- * 柱状图Option
- */
-export type BarOption = ComposeOption<BarSeriesOption | TitleComponentOption | TooltipComponentOption | GridComponentOption | DatasetComponentOption>
-
-/**
- *  折线图Option
- */
-export type LineOption = ComposeOption<LineSeriesOption | TitleComponentOption | TooltipComponentOption | GridComponentOption | DatasetComponentOption>
+// /**
+//  * 柱状图Option
+//  */
+// export type BarOption = ComposeOption<BarSeriesOption | TitleComponentOption | TooltipComponentOption | GridComponentOption | DatasetComponentOption>
+//
+// /**
+//  *  折线图Option
+//  */
+// export type LineOption = ComposeOption<LineSeriesOption | TitleComponentOption | TooltipComponentOption | GridComponentOption | DatasetComponentOption>
 
 
 echarts.use([
@@ -53,7 +53,7 @@ import { debounce } from 'lodash-es'
 import { onBeforeUnmount, onMounted, ref, shallowRef, watch } from 'vue'
 
 const props = defineProps<{
-  Options: EChartsOption
+  options: EChartsOption
 }>()
 
 const emit = defineEmits(['click'])
@@ -62,7 +62,7 @@ const chartRef = ref<HTMLDivElement>()
 
 const myChart = shallowRef<echarts.ECharts>()
 
-watch(() =>props.Options, (options) => {
+watch(() =>props.options, (options) => {
   if (chartRef.value) {
     myChart.value?.setOption(options)
   }
@@ -77,7 +77,7 @@ const change = () => {
   erd.listenTo((chartRef.value as HTMLDivElement), debounce(() => {
     myChart.value?.resize()
   }))
-  myChart.value?.setOption(props.Options)
+  myChart.value?.setOption(props.options || {})
   window.addEventListener('resize', debounce(() => {
     myChart.value?.resize()
   }))
@@ -98,7 +98,7 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div id="box" ref="chart" style="width: 100%; height: 100%;"></div>
+  <div id="box" ref="chartRef" style="width: 100%; height: 100%;"></div>
 </template>
 
 <style scoped>
