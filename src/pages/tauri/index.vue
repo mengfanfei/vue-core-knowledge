@@ -13,8 +13,8 @@ const name = ref('')
 
 const handleDialog = async () => {
   // const yes = await ask('yes or no', '提示')
-  const yes2 = await ask('This action cannot be reverted. Are you sure?', { title: 'Tauri', type: 'warning' });
-  const confirmed = await confirm('Are you sure?', {title: 'Tauri', type: 'warning' });
+  // const yes2 = await ask('This action cannot be reverted. Are you sure?', { title: 'Tauri', type: 'warning' });
+  // const confirmed = await confirm('Are you sure?', {title: 'Tauri', type: 'warning' });
   Modal.confirm({
     title: 'Tauri',
     content: 'This action cannot be reverted. Are you sure?',
@@ -22,7 +22,7 @@ const handleDialog = async () => {
     cancelText: 'No',
   })
   message.success('success!!!!')
-  await hide()
+  // await hide()
 }
 
 
