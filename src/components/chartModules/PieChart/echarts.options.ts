@@ -1,13 +1,21 @@
 import { scientificCounting } from '@/utils'
 import { ComposeOption } from 'echarts/core'
 import { PieSeriesOption } from 'echarts/charts'
-import { GridComponentOption, TitleComponentOption, TooltipComponentOption, LegendComponentOption } from 'echarts/components'
+import {
+  GridComponentOption,
+  LegendComponentOption,
+  TitleComponentOption,
+  TooltipComponentOption
+} from 'echarts/components'
+
 /**
  *  饼图Option
  */
 export type PieOption = ComposeOption<PieSeriesOption | TitleComponentOption | TooltipComponentOption | GridComponentOption | LegendComponentOption>
 
 export interface DataOption {
+  centerName?: string,
+  unit?: string,
   /**
    * 颜色，顺序取值
    */
@@ -48,13 +56,50 @@ export interface DataOption {
     bottom?: string | number
   },
   legendWidth?: number | string,
-  legendHeight?: number | string
+  legendHeight?: number | string,
+  centerNamePosition?: {
+    left?: string | number,
+    top?: string | number,
+  },
+  sum?: number,
+  showSum?: boolean,
+  sumPosition?: {
+    left?: string | number,
+    top?: string | number,
+  }
 }
 
 export function getOptions(data: DataOption): PieOption {
+
+  const getSum = () => {
+    return data.dataArr.reduce((pre, cur) => pre + cur.value, 0).toString()
+  }
   return {
     color: data.color,
-    title: {},
+    title: [
+      {
+        text: data.centerName ? `${data.centerName}${data.unit ? `(${data.unit})` : ''}` : '',
+        textAlign: 'center',
+        left: data.centerNamePosition?.left || 'center',
+        top: data.centerNamePosition?.top || 'center',
+        textStyle: {
+          color: 'rgba(0, 0, 0, 1)',
+          fontSize: 12,
+          fontWeight: 'normal',
+        }
+      },
+      {
+        text: data.sum ? scientificCounting(data.sum) : data.showSum ? getSum() : '',
+        textAlign: 'center',
+        left: data.sumPosition?.left || 'center',
+        top: data.sumPosition?.top || 'center',
+        textStyle: {
+          color: 'rgba(18, 18, 18, 1)',
+          fontSize: 22,
+          fontWeight: 600,
+        }
+      }
+    ],
     legend: {
       show: data.legendShow,
       top: data.legendPosition?.top,
@@ -63,6 +108,9 @@ export function getOptions(data: DataOption): PieOption {
       bottom: data.legendPosition?.bottom,
       width: data.legendWidth || 'auto',
       height: data.legendHeight || 'auto',
+      // itemWidth: 8,
+      // itemHeight: 8,
+      // itemGap: 12
     },
     tooltip: {
       trigger: 'item',

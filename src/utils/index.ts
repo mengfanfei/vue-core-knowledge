@@ -13,7 +13,7 @@ export function scientificCounting(number: number) {
     // 1. 填充：n > 1 循环未结束，就要填充为比如 1 ==> 001
     // 不然temp = ~~mod的时候，1 001就会变成 ”11“
     // 2. 拼接 ”，“
-    r = (n >= 1 ? `${temp}`.padStart(3, '0') : temp) + (r ? ',' : '')
+    r = (n >= 1 ? `${temp}`.padStart(3, '0') : temp) + (r ? ',' + r : '')
   } while (n >= 1)
   const strNumber = number + ''
   let index = strNumber.indexOf('.')

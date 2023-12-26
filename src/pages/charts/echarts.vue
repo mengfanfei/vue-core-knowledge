@@ -16,14 +16,24 @@ const data1 = ref<DataOption>({
 })
 const data2 = ref<DataOption>({
   legendShow: true,
+  centerName: '访问来源',
+  centerNamePosition: {
+    left: '29%',
+    top: '40%',
+  },
+  sum: 192384678,
+  sumPosition: {
+    left: '29%',
+    top: '50%',
+  },
   dataArr: [
     { value: 335, name: '直接访问' },
     { value: 310, name: '邮件营销' },
-    { value: 234, name: '联盟广告' },
+    { value:  234, name: '联盟广告' },
     { value: 135, name: '视频广告' },
     { value: 1548, name: '搜索引擎' },
   ],
-  radius: ['40%', '70%'],
+  radius: ['50%', '70%'],
   labelShow: false,
   legendPosition: {
     right: 20,
