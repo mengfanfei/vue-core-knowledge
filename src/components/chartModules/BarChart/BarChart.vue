@@ -1,21 +1,21 @@
 <script setup lang="ts">
 
 import ChartType from '@/components/ChartType.vue'
-import { PieDataOptions, PieOption, getOptions } from '@/components/chartModules/PieChart/echarts.options'
+import { BarDataOptions, BarOption, getOptions } from './echarts.options'
 import { onMounted, ref, watch } from 'vue'
 
 const props = defineProps<{
-  data: PieDataOptions
+  data: BarDataOptions
 }>()
 
-const options = ref<PieOption>()
+const options = ref<BarOption>()
 
 const renderData = () => {
-  if (props.data && props.data.dataArr) {
+  if (props.data && props.data.source) {
     options.value = getOptions(props.data)
   } else {
     options.value = {}
-    console.log('props.data.dataArr is undefined')
+    console.log('props.data.source is undefined')
   }
 }
 

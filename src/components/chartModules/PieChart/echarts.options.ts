@@ -2,7 +2,6 @@ import { scientificCounting } from '@/utils'
 import { ComposeOption } from 'echarts/core'
 import { PieSeriesOption } from 'echarts/charts'
 import {
-  GridComponentOption,
   LegendComponentOption,
   TitleComponentOption,
   TooltipComponentOption
@@ -11,9 +10,9 @@ import {
 /**
  *  饼图Option
  */
-export type PieOption = ComposeOption<PieSeriesOption | TitleComponentOption | TooltipComponentOption | GridComponentOption | LegendComponentOption>
+export type PieOption = ComposeOption<PieSeriesOption | TitleComponentOption | TooltipComponentOption  | LegendComponentOption>
 
-export interface DataOption {
+export interface PieDataOptions {
   centerName?: string,
   unit?: string,
   /**
@@ -69,7 +68,7 @@ export interface DataOption {
   }
 }
 
-export function getOptions(data: DataOption): PieOption {
+export function getOptions(data: PieDataOptions): PieOption {
 
   const getSum = () => {
     return data.dataArr.reduce((pre, cur) => pre + cur.value, 0).toString()
@@ -108,9 +107,13 @@ export function getOptions(data: DataOption): PieOption {
       bottom: data.legendPosition?.bottom,
       width: data.legendWidth || 'auto',
       height: data.legendHeight || 'auto',
-      // itemWidth: 8,
-      // itemHeight: 8,
-      // itemGap: 12
+      itemWidth: 8,
+      itemHeight: 8,
+      itemGap: 12,
+      borderWidth: 0,
+      itemStyle: {
+        borderWidth: 0
+      }
     },
     tooltip: {
       trigger: 'item',

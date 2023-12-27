@@ -16,16 +16,9 @@ import {
 import { LabelLayout, UniversalTransition } from 'echarts/features'
 // 引入canvas渲染器，注意引入 CanvasRenderer 或者 SVGRenderer 是必须的一步
 import { CanvasRenderer } from 'echarts/renderers'
-// import type { BarSeriesOption, LineSeriesOption } from 'echarts/charts'
-import type { EChartsOption } from 'echarts'
-// import type { TitleComponentOption, TooltipComponentOption, GridComponentOption, DatasetComponentOption } from 'echarts/components'
-// import type { ComposeOption } from 'echarts/core'
 
-// /**
-//  * 柱状图Option
-//  */
-// export type BarOption = ComposeOption<BarSeriesOption | TitleComponentOption | TooltipComponentOption | GridComponentOption | DatasetComponentOption>
-//
+import type { EChartsOption } from 'echarts'
+
 // /**
 //  *  折线图Option
 //  */
@@ -50,7 +43,7 @@ echarts.use([
 import elementResizeDetectorMaker from 'element-resize-detector'
 import { debounce } from 'lodash-es'
 
-import { onBeforeUnmount, onMounted, ref, shallowRef, watch } from 'vue'
+import { onMounted, ref, shallowRef, watch } from 'vue'
 
 const props = defineProps<{
   options: EChartsOption

@@ -12,6 +12,7 @@ declare module '@vue/runtime-core' {
     ACol: typeof import('ant-design-vue/es')['Col']
     ADivider: typeof import('ant-design-vue/es')['Divider']
     ARow: typeof import('ant-design-vue/es')['Row']
+    BarChart: typeof import('./src/components/chartModules/BarChart/BarChart.vue')['default']
     Charts: typeof import('./src/components/Charts.vue')['default']
     ChartType: typeof import('./src/components/ChartType.vue')['default']
     FlvVideo: typeof import('./src/components/FlvVideo.vue')['default']
