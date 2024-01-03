@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/vue-knowledge/',
   title: "前端Meng",
   description: "一个前端工作者的笔记集合",
   lastUpdated: true,
