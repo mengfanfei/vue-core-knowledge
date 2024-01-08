@@ -37,7 +37,10 @@ export default defineConfig({
         {
           text: 'Echarts + Vue',
           items: [
-            { text: 'Echarts 基础', link: '/Echarts/vue/echarts-basic' }
+            { text: 'Echarts 基础', link: '/Echarts/vue/echarts-basic' },
+            { text: '封装基础echarts组件', link: '/Echarts/vue/chartType.md' },
+            { text: '封装某一类型的组件(柱状图)', link: '/Echarts/vue/barChart.md'},
+            { text: '封装某一类型的组件(饼图)', link: '/Echarts/vue/PieChart.md'},
           ]
         },
         {
@@ -59,7 +62,7 @@ export default defineConfig({
     },
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/mengfanfei/vue-knowledge' }
     ]
   }
 })

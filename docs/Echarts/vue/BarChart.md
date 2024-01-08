@@ -1,3 +1,54 @@
+# 柱状图组件
+- 只专注于柱状图表，可以一列，堆叠，分组等。
+- 文件包括一个vue组件一个options.ts配置文件
+
+## 1. BarChart组件
+
+```vue
+<script setup lang="ts">
+
+import ChartType from '@/components/ChartType.vue'
+import { BarDataOptions, BarOption, getOptions } from './echarts.options'
+import { onMounted, ref, watch } from 'vue'
+
+const props = defineProps<{
+  data: BarDataOptions
+}>()
+
+const options = ref<BarOption>()
+
+const renderData = () => {
+  if (props.data && props.data.source) {
+    options.value = getOptions(props.data)
+  } else {
+    options.value = {}
+    console.log('props.data.source is undefined')
+  }
+}
+
+watch(()=> props.data, () => {
+  renderData()
+}, { deep: true })
+
+onMounted(() => {
+  renderData()
+})
+
+</script>
+
+<template>
+  <div style="width: 100%; height: 100%; position: relative;">
+    <ChartType :options="options" />
+  </div>
+</template>
+
+<style scoped>
+
+</style>
+
+```
+## 2. options.ts文件
+```ts
 import { ComposeOption } from 'echarts/core'
 import { BarSeriesOption, DatasetComponentOption } from 'echarts'
 import {
@@ -151,3 +202,9 @@ export function getOptions(data: BarDataOptions): BarOption {
     series: getSeries()
   }
 }
+
+```
+## 3. 实现思路
+1. 在`onMounted`钩子中，初始化`options`的值。
+2. 在`watchEffect`中，监听`props.data`的变化，当数据发生变化时，重新计算`options`的值。
+3. 使用`ChartType`组件，传入options，实现图表的展示。
