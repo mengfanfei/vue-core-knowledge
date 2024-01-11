@@ -78,11 +78,7 @@ const data5 = ref<BarDataOptions>({
     top: 16
   },
   yAxisName: '数量',
-  unit: '个',
-  lineSource: [
-    [41.1, 30.4, 65.1, 53.3],
-    [86.5, 92.1, 85.7, 83.1]
-  ]
+  unit: '个'
 })
 const data6 = ref<BarDataOptions>({
   legendShow: true,

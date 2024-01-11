@@ -67,7 +67,8 @@
         "height": 600,
         "resizable": true,
         "title": "vue3-visualize",
-        "width": 800
+        "width": 800,
+        "url": "index.html"
       }
     ]
   }
