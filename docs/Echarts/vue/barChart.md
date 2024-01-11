@@ -210,7 +210,8 @@ export function getOptions(data: BarDataOptions): BarOption {
 3. 使用`ChartType`组件，传入options，实现图表的展示。
 
 ## 4. 使用方式
-![柱状图](../../assets/imgs/barChartImg.png)
+
+[//]: # (![柱状图]&#40;../../assets/imgs/barChartImg.png&#41;)
 
 ```vue
 <template>

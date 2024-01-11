@@ -208,7 +208,8 @@ export function getOptions(data: PieDataOptions): PieOption {
 3. 使用`ChartType`组件，传入options，实现图表的展示。
 
 ## 4. 使用方式
-![饼图](../../assets/imgs/pieChartImg.png)
+
+[//]: # (![饼图]&#40;../../assets/imgs/pieChartImg.png&#41;)
 ```vue
 <template>
   <a-divider orientation="left">饼状图</a-divider>
