@@ -208,8 +208,7 @@ export function getOptions(data: PieDataOptions): PieOption {
 3. 使用`ChartType`组件，传入options，实现图表的展示。
 
 ## 4. 使用方式
-
-[//]: # (![饼图]&#40;../../assets/imgs/pieChartImg.png&#41;)
+![饼图](../../assets/imgs/pieChartImg.png)
 ```vue
 <template>
   <a-divider orientation="left">饼状图</a-divider>
@@ -290,39 +289,22 @@ export function getOptions(data: PieDataOptions): PieOption {
 
 ## 5. 配置项
 
-[//]: # ()
-[//]: # (| 参数名                | 类型                                                                                                                      | 默认值                          | 描述                                                                                                                                             |)
 
-[//]: # (|--------------------|-------------------------------------------------------------------------------------------------------------------------|------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|)
-
-[//]: # (| dataArr            | \{name: string, value: number\}\[\]                                                                                     | -                            | 饼图数据                                                                                                                                           |)
-
-[//]: # (| radius             | string &#124; number &#124; \&#40;string &#124; number\&#41;\[\]                                                                | \[0, '50%'\]                 | 饼图的半径，number：直接指定外半径值string：例如，'20%'，表示外半径为可视区尺寸（容器高宽中较小一项）的 20% 长度。Array.<number &#124; string>：数组的第一项是内半径，第二项是外半径。每一项遵从上述 number string 的描述。 |)
-
-[//]: # (| labelShow          | boolean                                                                                                                 | undefined                    | 是否显示标签 ,默认展示，不展示请传false                                                                                                                        |)
-
-[//]: # (| centerName         | string                                                                                                                  | -                            | 中心文字，默认不显示                                                                                                                                     |)
-
-[//]: # (| centerNamePosition | \{left: string &#124; number,top: string &#124; number\}                                                                | left: 'center, top: 'center' | 中心文字的位置                                                                                                                                        |)
-
-[//]: # (| unit               | string                                                                                                                  | -                            | 中心文字的单位，默认不显示                                                                                                                                  |)
-
-[//]: # (| color              | string\[\]                                                                                                              | -                            | 饼图颜色，默认使用 theme 中的颜色                                                                                                                           |)
-
-[//]: # (| legendShow         | boolean                                                                                                                 | true                         | 是否显示图例                                                                                                                                         |)
-
-[//]: # (| legendPosition     | \{top?: string &#124; number,left?: string &#124; number, right?: string &#124; number, bottom?: string &#124; number\} | -                            | 图例位置, 有right时left不生效                                                                                                                           |)
-
-[//]: # (| legendWidth        | number &#124; string                                                                                                    | -                            | 图例宽度                                                                                                                                           |)
-
-[//]: # (| legendHeight       | number &#124; string                                                                                                    | -                            | 图例高度                                                                                                                                           |)
-
-[//]: # (| pieCenter          | string &#124; number &#124; \&#40;string &#124; number\&#41;\[\]                                                                | \['50%', '50%'\]             | 饼图的原点，即配置中的series.center                                                                                                                       |)
-
-[//]: # (| roseType           | 'radius' &#124; 'area'                                                                                                  | -                            | 是否展示成南丁格尔图                                                                                                                                     |)
-
-[//]: # (| sum                | number                                                                                                                  | -                            | 数据总数                                                                                                                                           |)
-
-[//]: # (| showSum            | boolean                                                                                                                 | false                        | 是否显示总数                                                                                                                                         |)
-
-[//]: # (| sumPosition        | \{left: string &#124; number,top: string &#124; number\}                                                                | 'start'                      | 总数显示位置                                                                                                                                         |)
+| 参数名                | 类型                                                                                                                      | 默认值                          | 描述                                                                                                                                             |
+|--------------------|-------------------------------------------------------------------------------------------------------------------------|------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
+| dataArr            | \{name: string, value: number\}\[\]                                                                                     | -                            | 饼图数据                                                                                                                                           |
+| radius             | string &#124; number &#124; \(string &#124; number\)\[\]                                                                | \[0, '50%'\]                 | 饼图的半径，number：直接指定外半径值string：例如，'20%'，表示外半径为可视区尺寸（容器高宽中较小一项）的 20% 长度。Array.<number &#124; string>：数组的第一项是内半径，第二项是外半径。每一项遵从上述 number string 的描述。 |
+| labelShow          | boolean                                                                                                                 | undefined                    | 是否显示标签 ,默认展示，不展示请传false                                                                                                                        |
+| centerName         | string                                                                                                                  | -                            | 中心文字，默认不显示                                                                                                                                     |
+| centerNamePosition | \{left: string &#124; number,top: string &#124; number\}                                                                | left: 'center, top: 'center' | 中心文字的位置                                                                                                                                        |
+| unit               | string                                                                                                                  | -                            | 中心文字的单位，默认不显示                                                                                                                                  |
+| color              | string\[\]                                                                                                              | -                            | 饼图颜色，默认使用 theme 中的颜色                                                                                                                           |
+| legendShow         | boolean                                                                                                                 | true                         | 是否显示图例                                                                                                                                         |
+| legendPosition     | \{top?: string &#124; number,left?: string &#124; number, right?: string &#124; number, bottom?: string &#124; number\} | -                            | 图例位置, 有right时left不生效                                                                                                                           |
+| legendWidth        | number &#124; string                                                                                                    | -                            | 图例宽度                                                                                                                                           |
+| legendHeight       | number &#124; string                                                                                                    | -                            | 图例高度                                                                                                                                           |
+| pieCenter          | string &#124; number &#124; \(string &#124; number\)\[\]                                                                | \['50%', '50%'\]             | 饼图的原点，即配置中的series.center                                                                                                                       |
+| roseType           | 'radius' &#124; 'area'                                                                                                  | -                            | 是否展示成南丁格尔图                                                                                                                                     |
+| sum                | number                                                                                                                  | -                            | 数据总数                                                                                                                                           |
+| showSum            | boolean                                                                                                                 | false                        | 是否显示总数                                                                                                                                         |
+| sumPosition        | \{left: string &#124; number,top: string &#124; number\}                                                                | 'start'                      | 总数显示位置                                                                                                                                         |
