@@ -176,5 +176,5 @@ onMounted(() => {
 
 ## 4. 使用方式
 1. 在基础组件之上再封装一个组件，专注某一类型的图表
-    - 请看 [封装某一类型的组件](/Echarts/vue/BarChart.md)
+    - 请看 [封装某一类型的组件](./barChart)
 2. 直接使用chartType组件，更新options即可
