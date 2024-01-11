@@ -211,6 +211,7 @@ export function getOptions(data: BarDataOptions): BarOption {
 
 ## 4. 使用方式
 ![柱状图](../../assets/imgs/barChartImg.png)
+
 ```vue
 <template>
   <a-divider orientation="left">柱状图</a-divider>
@@ -272,21 +273,23 @@ export function getOptions(data: BarDataOptions): BarOption {
 - 改变data内容，图表将自动刷新
 - 注意：图表的高度必须指定
 
-## 配置项
 
-### 通用配置项
+## 5. 配置项
 
-| 参数名            | 类型                                                                                                                    | 默认值                                            | 描述                   |
-|----------------|-----------------------------------------------------------------------------------------------------------------------|------------------------------------------------|----------------------|
-| source         | (number &#124; string)[][]                                                                                            | -                                              | 图表数据源，必填             |
-| color          | string[]                                                                                                              | -                                              | 图例颜色                 |
-| legendShow     | boolean                                                                                                               | false                                          | 图例是否显示               |
-| legendPosition | {top?: string &#124; number,left?: string &#124; number, right?: string &#124; number, bottom?: string &#124; number} | -                                              | 图例位置, 有right时left不生效 |
-| legendWidth    | number &#124; string                                                                                                  | -                                              | 图例宽度                 |
-| legendHeight   | number &#124; string                                                                                                  | -                                              | 图例高度                 |
-| yAxisName      | string                                                                                                                | -                                              | y轴名称                 |
-| unit           | string                                                                                                                | -                                              | y轴单位                 |
-| barWidth       | number                                                                                                                | -                                              | 柱状图宽度                |
-| stack          | string[]                                                                                                              | -                                              | 堆叠图                  |
-| itemLabel      | boolean                                                                                                               | false                                          | 柱状图是否显示数值            |
-| gridPosition   | {top?: string &#124; number,left?: string &#124; number, right?: string &#124; number, bottom?: string &#124; number} | {top: 60, left: '5%', right: '5%', bottom: 24} | 图表位置                 |
+
+| 属性             | 类型                                                                                                                    | 默认值                                          | 说明                   |
+|----------------|-----------------------------------------------------------------------------------------------------------------------|----------------------------------------------|----------------------|
+| source         | (number &#124; string)[][]                                                                                            | -                                            | 图表数据源，必填             |
+| color          | string[]                                                                                                              | -                                            | 图例颜色                 |
+| legendShow     | boolean                                                                                                               | false                                        | 图例是否显示               |
+| legendPosition | {top?: string &#124; number,left?: string &#124; number, right?: string &#124; number, bottom?: string &#124; number} | -                                            | 图例位置, 有right时left不生效 |
+| legendWidth    | number &#124; string                                                                                                  | -                                            | 图例宽度                 |
+| legendHeight   | number &#124; string                                                                                                  | -                                            | 图例高度                 |
+| yAxisName      | string                                                                                                                | -                                            | y轴名称                 |
+| unit           | string                                                                                                                | -                                            | y轴单位                 |
+| barWidth       | number                                                                                                                | -                                            | 柱状图宽度                |
+| stack          | string[]                                                                                                              | -                                            | 堆叠图                  |
+| itemLabel      | boolean                                                                                                               | false                                        | 柱状图是否显示数值            |
+| gridPosition   | {top?: string &#124; number,left?: string &#124; number, right?: string &#124; number, bottom?: string &#124; number} | top: 60, right: '5%', left: '5%', bottom: 24 |                      | 图表位置                 |
+
+
