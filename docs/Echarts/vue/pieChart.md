@@ -204,7 +204,7 @@ export function getOptions(data: PieDataOptions): PieOption {
 ```
 ## 3. 实现思路
 1. 在`onMounted`钩子中，初始化`options`的值。
-2. 在`watchEffect`中，监听`props.data`的变化，当数据发生变化时，重新计算`options`的值。
+2. 在`watch`中，监听`props.data`的变化，当数据发生变化时，重新计算`options`的值。
 3. 使用`ChartType`组件，传入options，实现图表的展示。
 
 ## 4. 使用方式

@@ -1,3 +1,15 @@
+# 百度地图在vue中的使用
+
+## 获取百度地图key
+
+1. 进入百度地图官网，注册账号并登录
+2. 进入控制台，创建应用
+3. 获取API Key
+
+## 在vue中异步方式引入百度地图
+
+1. 封装百度地图hooks
+```ts
 import { onMounted, shallowRef } from 'vue'
 
 export interface IPoint {
@@ -42,7 +54,7 @@ export function useMap(HTMLID: string, point: IPoint, zoom: number, callback: ()
       }
       const script = document.createElement('script')
       script.type = 'text/javascript'
-      script.src = 'https://api.map.baidu.com/api?type=webgl&v=1.0&ak=1tfermOiNIXyk8obicGH4kNvb7KCW6Hy&callback=onBMapGLCallback'
+      script.src = 'https://api.map.baidu.com/api?type=webgl&v=1.0&ak=你的百度key&callback=onBMapGLCallback'
       // script.onerror = reject
       document.body.appendChild(script)
     })
@@ -90,3 +102,7 @@ export function useMap(HTMLID: string, point: IPoint, zoom: number, callback: ()
     BMapGLLib
   }
 }
+
+```
+## 2. 在页面中使用hooks
+

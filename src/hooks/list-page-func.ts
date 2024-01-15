@@ -1,4 +1,5 @@
-import { PaginationType, usePaginationSetting } from "./list-page"
+import { PaginationType, usePaginationSetting } from './list-page'
+import { onMounted, ref } from 'vue'
 
 interface IQueryParams {
   [propsName: string]: any
@@ -6,6 +7,7 @@ interface IQueryParams {
 
 /**
  * 统一聚合列表页面的一些筛选，搜索，重置等每个页面相同的代码
+ * @param queryParams
  * @param callback 获取列表的方法
  * @returns
  */
@@ -27,7 +29,7 @@ export function usePageFunc(queryParams: IQueryParams = {}, callback: Function) 
     console.log(value, start, end)
     if (value) {
       queryParams[start] = value[0]
-      queryParams[end] = value[1] 
+      queryParams[end] = value[1]
     } else {
       queryParams[start] = undefined
       queryParams[end] = undefined
@@ -46,19 +48,17 @@ export function usePageFunc(queryParams: IQueryParams = {}, callback: Function) 
   }
   /**
    * @description 参数拼接
-   * @param pagination 分页
-  */
+   * @param p
+   */
   const getSearchParams = (p?: PaginationType) => {
     const { pageSize, pageNo } = p || pagination
     const formParams = { ...queryParams }
 
-    const result = {
+    return {
       pageSize,
       pageNo,
       ...formParams
     }
-
-    return result
   }
   /**
    * @description 查询

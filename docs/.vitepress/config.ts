@@ -18,9 +18,10 @@ export default defineConfig({
     },
     nav: [
       {
-        text: '图表库',
+        text: '可视化',
         items: [
-          {text: 'Echarts', link: '/Echarts/vue/echarts-basic' },
+          { text: 'Echarts', link: '/Echarts/vue/echarts-basic' },
+          { text: '百度地图', link: '/bdMap/intro' }
         ]
       },
       {
