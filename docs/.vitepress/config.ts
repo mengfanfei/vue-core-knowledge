@@ -28,7 +28,8 @@ export default defineConfig({
         text: '跨平台',
         items: [
           { text: 'Flutter', link: '/Flutter/flutter-basic' },
-          { text: 'uni-app', link: '/uni-app' }
+          { text: 'uni-app', link: '/uni-app/cli-template-intro' },
+          { text: 'electron', link: '/electron/intro' }
         ]
       }
     ],
@@ -51,6 +52,14 @@ export default defineConfig({
           ]
         }
       ],
+      '/bdMap/': [
+        {
+          text: '百度地图',
+          items: [
+            { text: '百度地图在vue中的使用', link: '/bdMap/intro' }
+          ]
+        }
+      ],
       '/Flutter/': [
         {
           text: 'Flutter',
@@ -59,7 +68,22 @@ export default defineConfig({
           ]
         }
       ],
-      '/uni-app/': []
+      '/uni-app/': [
+        {
+          text: 'uniapp',
+          items: [
+            { text: 'uniapp模板介绍(cli模式)', link: '/uni-app/cli-template-intro' }
+          ]
+        }
+      ],
+      '/electron/': [
+        {
+          text: 'electron',
+          items: [
+            { text: 'electron打包介绍', link: '/uni-app/electron-intro' }
+          ]
+        }
+      ]
     },
 
     socialLinks: [
