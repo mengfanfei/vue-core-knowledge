@@ -80,7 +80,7 @@ export default defineConfig({
         {
           text: 'electron',
           items: [
-            { text: 'electron打包介绍', link: '/uni-app/electron-intro' }
+            { text: 'electron打包介绍', link: '/electron/electron-intro' }
           ]
         }
       ]
