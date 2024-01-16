@@ -15,6 +15,7 @@ declare module '@vue/runtime-core' {
     BarChart: typeof import('./src/components/chartModules/BarChart/BarChart.vue')['default']
     Charts: typeof import('./src/components/Charts.vue')['default']
     ChartType: typeof import('./src/components/ChartType.vue')['default']
+    ChoicePosition: typeof import('./src/components/choicePosition/index.vue')['default']
     FlvVideo: typeof import('./src/components/FlvVideo.vue')['default']
     PieChart: typeof import('./src/components/chartModules/PieChart/PieChart.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

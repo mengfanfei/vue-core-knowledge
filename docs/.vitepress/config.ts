@@ -29,7 +29,7 @@ export default defineConfig({
         items: [
           { text: 'Flutter', link: '/Flutter/flutter-basic' },
           { text: 'uni-app', link: '/uni-app/cli-template-intro' },
-          { text: 'electron', link: '/electron/intro' }
+          { text: 'electron', link: '/electron/electron-intro' }
         ]
       }
     ],
@@ -56,7 +56,9 @@ export default defineConfig({
         {
           text: '百度地图',
           items: [
-            { text: '百度地图在vue中的使用', link: '/bdMap/intro' }
+            { text: '百度地图在vue中的使用', link: '/bdMap/intro' },
+            { text: '点选地址组件', link: '/bdMap/choicePosition'},
+            { text: '常见问题总结', link: '/bdMap/question'}
           ]
         }
       ],
@@ -80,7 +82,7 @@ export default defineConfig({
         {
           text: 'electron',
           items: [
-            { text: 'electron打包介绍', link: '/uni-app/electron-intro' }
+            { text: 'electron打包介绍', link: '/electron/electron-intro' }
           ]
         }
       ]

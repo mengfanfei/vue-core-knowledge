@@ -42,7 +42,7 @@ export function useMap(HTMLID: string, point: IPoint, zoom: number, callback: ()
       }
       const script = document.createElement('script')
       script.type = 'text/javascript'
-      script.src = 'https://api.map.baidu.com/api?type=webgl&v=1.0&ak=1tfermOiNIXyk8obicGH4kNvb7KCW6Hy&callback=onBMapGLCallback'
+      script.src = 'https://api.map.baidu.com/api?type=webgl&v=1.0&ak=uCIMMTpuU6Vf58c4RWzTOFK8YROukeTu&callback=onBMapGLCallback'
       // script.onerror = reject
       document.body.appendChild(script)
     })
