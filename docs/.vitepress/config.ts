@@ -18,10 +18,23 @@ export default defineConfig({
     },
     nav: [
       {
+        text: '基础能力',
+        items: [
+          { text: 'HTML', link: '/html/intro'},
+          { text: 'CSS', link: '/css/intro' },
+          { text: 'JavaScript', link: '/javascript/intro' },
+          { text: 'TypeScript', link: '/typescript/intro' },
+          { text: 'Vue', link: '/vue/intro' },
+          // { text: 'Webpack', link: '/webpack/intro' }
+        ]
+      },
+      {
         text: '可视化',
         items: [
           { text: 'Echarts', link: '/Echarts/vue/echarts-basic' },
-          { text: '百度地图', link: '/bdMap/intro' }
+          { text: '百度地图', link: '/bdMap/intro' },
+          { text: '可视化大屏', link: '/visualization/intro' },
+          { text: 'webGL+three.js', link: '/webGL/intro' }
         ]
       },
       {
@@ -30,6 +43,26 @@ export default defineConfig({
           { text: 'Flutter', link: '/Flutter/flutter-basic' },
           { text: 'uni-app', link: '/uni-app/cli-template-intro' },
           { text: 'electron', link: '/electron/electron-intro' }
+        ]
+      },
+      {
+        text: '多媒体',
+        items: [
+          { text: '音视频', link: '/multimedia/audio-video-intro' },
+          { text: 'flv.js', link: '/flv.js/flvjs-intro' },
+          { text: 'WebRTC', link: '/webrtc/webrtc-intro'}
+        ]
+      },
+      {
+        text: '运维',
+        link: ''
+      },
+      {
+        text: '其他',
+        items: [
+          { text: 'WebAssembly', link: '/WebAssembly/webAssembly-intro' },
+          { text: 'Rust', link: '/rust/rust-intro' },
+          { text: 'ArkTs', link: '/arkts/arkts-intro'}
         ]
       }
     ],
