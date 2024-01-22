@@ -48,7 +48,7 @@ export default defineConfig({
         {
           text: 'Echarts + uni-app',
           items: [
-            { text: 'Echarts 基础', link: '/Echarts/vue/echarts-basic' }
+            { text: 'Echarts在uniapp中的使用', link: '/Echarts/uniapp/echarts-intro' }
           ]
         }
       ],
@@ -74,7 +74,8 @@ export default defineConfig({
         {
           text: 'uniapp',
           items: [
-            { text: 'uniapp模板介绍(cli模式)', link: '/uni-app/cli-template-intro' }
+            { text: 'uniapp模板介绍(cli模式)', link: '/uni-app/cli-template-intro' },
+            { text: 'uniapp中使用echarts', link: '/Echarts/uniapp/echarts-intro'}
           ]
         }
       ],
