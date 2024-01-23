@@ -49,7 +49,7 @@ export default defineConfig({
         text: '多媒体',
         items: [
           { text: '音视频', link: '/multimedia/audio-video-intro' },
-          { text: 'flv.js', link: '/flv.js/flvjs-intro' },
+          { text: 'flv.js', link: '/flvjs/flvjs-intro' },
           { text: 'WebRTC', link: '/webrtc/webrtc-intro'}
         ]
       },
@@ -117,6 +117,14 @@ export default defineConfig({
           text: 'electron',
           items: [
             { text: 'electron打包介绍', link: '/electron/electron-intro' }
+          ]
+        }
+      ],
+      '/flvjs/': [
+        {
+          text: 'flv.js',
+          items: [
+            { text: 'flv.js的简单使用', link: '/flvjs/flvjs-intro' }
           ]
         }
       ]
