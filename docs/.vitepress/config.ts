@@ -24,7 +24,7 @@ export default defineConfig({
           { text: 'CSS', link: '/css/intro' },
           { text: 'JavaScript', link: '/javascript/intro' },
           { text: 'TypeScript', link: '/typescript/intro' },
-          { text: 'Vue', link: '/vue/intro' },
+          { text: 'Vue', link: '/vue/vue-tips' },
           // { text: 'Webpack', link: '/webpack/intro' }
         ]
       },
@@ -68,6 +68,15 @@ export default defineConfig({
     ],
 
     sidebar: {
+      '/vue/': [
+        {
+          text: 'Vue',
+          items: [
+            { text: 'vue tips', link: '/vue/vue-tips' },
+            { text: 'vue hooks', link: '/vue/vue-hooks' }
+          ]
+        }
+      ],
       '/Echarts/': [
         {
           text: 'Echarts + Vue',
