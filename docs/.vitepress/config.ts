@@ -104,6 +104,14 @@ export default defineConfig({
           ]
         }
       ],
+      '/visualization/': [
+        {
+          text: '可视化大屏',
+          items: [
+            { text: 'ResizeFrame全屏适配组件', link: '/visualization/intro' }
+          ]
+        }
+      ],
       '/Flutter/': [
         {
           text: 'Flutter',
