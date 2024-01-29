@@ -55,7 +55,11 @@ export default defineConfig({
       },
       {
         text: '运维',
-        link: ''
+        items: [
+          { text: 'DevOps', link: '/ops/DevOps' },
+          { text: 'Nginx', link: '/nginx/intro' },
+          { text: 'Docker', link: '/docker/intro' }
+        ]
       },
       {
         text: '其他',
@@ -133,7 +137,8 @@ export default defineConfig({
         {
           text: 'electron',
           items: [
-            { text: 'electron打包介绍', link: '/electron/electron-intro' }
+            { text: 'electron进程与通信', link: '/electron/electron-intro' },
+            { text: 'electron更新', link: '/electron/electron-update' }
           ]
         }
       ],
