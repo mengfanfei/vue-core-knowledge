@@ -21,8 +21,8 @@ export default defineConfig({
         text: '基础能力',
         items: [
           { text: 'HTML', link: '/html/intro'},
-          { text: 'CSS', link: '/css/intro' },
-          { text: 'JavaScript', link: '/javascript/intro' },
+          { text: 'CSS', link: '/css/css-tips' },
+          { text: 'JavaScript', link: '/javascript/js-tips' },
           { text: 'TypeScript', link: '/typescript/intro' },
           { text: 'Vue', link: '/vue/vue-tips' },
           // { text: 'Webpack', link: '/webpack/intro' }
@@ -72,6 +72,22 @@ export default defineConfig({
     ],
 
     sidebar: {
+      '/css/': [
+        {
+          text: 'CSS',
+          items: [
+            { text: 'CSS Tips', link: '/css/css-tips' }
+          ]
+        }
+      ],
+      '/javascript/': [
+        {
+          text: 'JavaScript',
+          items: [
+            { text: 'JS Tips', link: '/javascript/js-tips' }
+          ]
+        }
+      ],
       '/vue/': [
         {
           text: 'Vue',
