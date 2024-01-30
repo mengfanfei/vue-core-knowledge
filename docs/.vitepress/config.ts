@@ -76,7 +76,10 @@ export default defineConfig({
         {
           text: 'CSS',
           items: [
-            { text: 'CSS Tips', link: '/css/css-tips' }
+            { text: 'CSS Tips', link: '/css/css-tips' },
+            { text: 'CSS3系列之转换', link: '/css/css-transform' },
+            { text: 'CSS3系列之过渡', link: '/css/css-transition' },
+            { text: 'CSS3系列之动画', link: '/css/css-animation' }
           ]
         }
       ],

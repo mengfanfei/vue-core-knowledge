@@ -83,3 +83,16 @@ body,html{
   -webkit-box-orient: vertical;
 }
 ```
+## css中的calc()函数出现【invalid property value】错误
+【invalid property value】错误，即【无效的属性值】，比如 `width: calc(1536px+12px);` 。
+解答：`calc()`函数是一个进行四则运算（加减乘除）的函数，在其中的运算符的两侧都需要保留一个空格才会生效。因此正确的写法应该是 `width: calc(1536 + 12px); `。
+## 鼠标指针样式
+```css
+cursor: default; /**默认，箭头**/
+cursor: pointer; /**手指**/
+cursor: help; /**带问号的帮助样式**/
+cursor: wait; /**加载中**/
+cursor: text; /**文本选择**/
+cursor: crosshair; /**十字样式**/
+```
+## border-image：使用图片设置border边框
