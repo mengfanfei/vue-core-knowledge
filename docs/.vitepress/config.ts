@@ -91,6 +91,14 @@ export default defineConfig({
           ]
         }
       ],
+      '/typescript/': [
+        {
+          text: 'TypeScript',
+          items: [
+            { text: '基础知识', link: '/typescript/intro' }
+          ]
+        }
+      ],
       '/vue/': [
         {
           text: 'Vue',
