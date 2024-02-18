@@ -66,7 +66,8 @@ export default defineConfig({
         items: [
           { text: 'WebAssembly', link: '/WebAssembly/webAssembly-intro' },
           { text: 'Rust', link: '/rust/rust-intro' },
-          { text: 'ArkTs', link: '/arkts/arkts-intro'}
+          { text: 'ArkTs', link: '/arkts/arkts-intro'},
+          { text: '面试', link: '/interview/html'}
         ]
       }
     ],
@@ -104,7 +105,8 @@ export default defineConfig({
           text: 'Vue',
           items: [
             { text: 'vue tips', link: '/vue/vue-tips' },
-            { text: 'vue hooks', link: '/vue/vue-hooks' }
+            { text: 'vue hooks', link: '/vue/vue-hooks' },
+            { text: '在微信网页与浏览器网页中尝试打开APP的综合实例', link: '/vue/h5-open-app'}
           ]
         }
       ],
@@ -178,6 +180,14 @@ export default defineConfig({
           text: 'flv.js',
           items: [
             { text: 'flv.js的简单使用', link: '/flvjs/flvjs-intro' }
+          ]
+        }
+      ],
+      '/interview/': [
+        {
+          text: '面试',
+          items: [
+            { text: 'HTML', link: '/interview/html' }
           ]
         }
       ]

@@ -328,3 +328,44 @@ as const后缀的作用类似于const，但适用于类型系统，确保所有�
 const req = { url: "https://example.com", method: "GET" } as const;
 handleRequest(req.url, req.method);
 ```
+
+## 非空断言运算符\(后缀!\)
+
+```ts
+function liveDangerously(x?: number | null) {
+  // No error
+  console.log(x!.toFixed());
+}
+```
+
+## 枚举类型
+枚举是TypeScript为数不多的不是JavaScript类型级扩展的特性之一。
+
+枚举允许开发人员定义一组命名常量。使用枚举可以更容易地记录意图，或创建一组不同的案例。TypeScript提供了基于数字和字符串的枚举。
+
+枚举可以使用enum关键字定义。
+
+### 1. 数字枚举
+
+```ts
+enum Direction {
+  Up = 1,
+  Down,
+  Left,
+  Right,
+}
+```
+上面，我们有一个数值枚举，其中Up初始化为1。从那时起，以下所有成员都将自动递增。换句话说，Direction.Up为1，Down为2，Left为3，Right为4。
+
+如果我们愿意，我们可以完全去掉初始化式:
+
+```ts
+enum Direction {
+  Up,
+  Down,
+  Left,
+  Right,
+}
+```
+
+这里，Up的值是0,Down的值是1，等等。这种自动递增行为对于我们可能不关心成员值本身，但关心每个值与同一枚举中的其他值不同的情况很有用。
