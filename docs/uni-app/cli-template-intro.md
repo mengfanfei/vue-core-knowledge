@@ -1027,7 +1027,10 @@ manifest.json
             "minified": true
         },
         "usingComponents" : true,
-        "lazyCodeLoading": "requiredComponents"
+        "lazyCodeLoading": "requiredComponents",
+        "optimization": {
+          "subPackages": true
+        }
     },
     "mp-alipay" : {
         "usingComponents" : true
