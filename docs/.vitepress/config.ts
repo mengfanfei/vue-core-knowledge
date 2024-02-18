@@ -158,7 +158,7 @@ export default defineConfig({
             { text: 'uniapp模板介绍(cli模式)', link: '/uni-app/cli-template-intro' },
             { text: 'uniapp中使用echarts', link: '/Echarts/uniapp/echarts-intro'},
             { text: 'uniapp Tips', link: '/uni-app/uniapp-tip'},
-            { text: '搜索+搜索历史+热门搜索+联想', link: 'uni-app/uniapp-search'}
+            { text: '搜索+搜索历史+热门搜索+联想', link: '/uni-app/uniapp-search'}
           ]
         }
       ],
