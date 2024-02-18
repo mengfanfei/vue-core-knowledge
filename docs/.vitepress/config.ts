@@ -18,10 +18,23 @@ export default defineConfig({
     },
     nav: [
       {
+        text: '基础能力',
+        items: [
+          { text: 'HTML', link: '/html/intro'},
+          { text: 'CSS', link: '/css/css-tips' },
+          { text: 'JavaScript', link: '/javascript/js-tips' },
+          { text: 'TypeScript', link: '/typescript/intro' },
+          { text: 'Vue', link: '/vue/vue-tips' },
+          // { text: 'Webpack', link: '/webpack/intro' }
+        ]
+      },
+      {
         text: '可视化',
         items: [
           { text: 'Echarts', link: '/Echarts/vue/echarts-basic' },
-          { text: '百度地图', link: '/bdMap/intro' }
+          { text: '百度地图', link: '/bdMap/intro' },
+          { text: '可视化大屏', link: '/visualization/intro' },
+          { text: 'webGL+three.js', link: '/webGL/intro' }
         ]
       },
       {
@@ -29,12 +42,72 @@ export default defineConfig({
         items: [
           { text: 'Flutter', link: '/Flutter/flutter-basic' },
           { text: 'uni-app', link: '/uni-app/cli-template-intro' },
-          { text: 'electron', link: '/electron/intro' }
+          { text: 'electron', link: '/electron/electron-intro' }
+        ]
+      },
+      {
+        text: '多媒体',
+        items: [
+          { text: '音视频', link: '/multimedia/audio-video-intro' },
+          { text: 'flv.js', link: '/flvjs/flvjs-intro' },
+          { text: 'WebRTC', link: '/webrtc/webrtc-intro'}
+        ]
+      },
+      {
+        text: '运维',
+        items: [
+          { text: 'DevOps', link: '/ops/DevOps' },
+          { text: 'Nginx', link: '/nginx/intro' },
+          { text: 'Docker', link: '/docker/intro' }
+        ]
+      },
+      {
+        text: '其他',
+        items: [
+          { text: 'WebAssembly', link: '/WebAssembly/webAssembly-intro' },
+          { text: 'Rust', link: '/rust/rust-intro' },
+          { text: 'ArkTs', link: '/arkts/arkts-intro'}
         ]
       }
     ],
 
     sidebar: {
+      '/css/': [
+        {
+          text: 'CSS',
+          items: [
+            { text: 'CSS Tips', link: '/css/css-tips' },
+            { text: 'CSS3系列之转换', link: '/css/css-transform' },
+            { text: 'CSS3系列之过渡', link: '/css/css-transition' },
+            { text: 'CSS3系列之动画', link: '/css/css-animation' }
+          ]
+        }
+      ],
+      '/javascript/': [
+        {
+          text: 'JavaScript',
+          items: [
+            { text: 'JS Tips', link: '/javascript/js-tips' }
+          ]
+        }
+      ],
+      '/typescript/': [
+        {
+          text: 'TypeScript',
+          items: [
+            { text: '基础知识', link: '/typescript/intro' }
+          ]
+        }
+      ],
+      '/vue/': [
+        {
+          text: 'Vue',
+          items: [
+            { text: 'vue tips', link: '/vue/vue-tips' },
+            { text: 'vue hooks', link: '/vue/vue-hooks' }
+          ]
+        }
+      ],
       '/Echarts/': [
         {
           text: 'Echarts + Vue',
@@ -48,7 +121,7 @@ export default defineConfig({
         {
           text: 'Echarts + uni-app',
           items: [
-            { text: 'Echarts 基础', link: '/Echarts/vue/echarts-basic' }
+            { text: 'Echarts在uniapp中的使用', link: '/Echarts/uniapp/echarts-intro' }
           ]
         }
       ],
@@ -56,7 +129,17 @@ export default defineConfig({
         {
           text: '百度地图',
           items: [
-            { text: '百度地图在vue中的使用', link: '/bdMap/intro' }
+            { text: '百度地图在vue中的使用', link: '/bdMap/intro' },
+            { text: '点选地址组件', link: '/bdMap/choicePosition'},
+            { text: '常见问题总结', link: '/bdMap/question'}
+          ]
+        }
+      ],
+      '/visualization/': [
+        {
+          text: '可视化大屏',
+          items: [
+            { text: 'ResizeFrame全屏适配组件', link: '/visualization/intro' }
           ]
         }
       ],
@@ -72,7 +155,9 @@ export default defineConfig({
         {
           text: 'uniapp',
           items: [
-            { text: 'uniapp模板介绍(cli模式)', link: '/uni-app/cli-template-intro' }
+            { text: 'uniapp模板介绍(cli模式)', link: '/uni-app/cli-template-intro' },
+            { text: 'uniapp中使用echarts', link: '/Echarts/uniapp/echarts-intro'},
+            { text: 'uniapp Tips', link: '/uni-app/uniapp-tip'}
           ]
         }
       ],
@@ -80,10 +165,22 @@ export default defineConfig({
         {
           text: 'electron',
           items: [
-            { text: 'electron打包介绍', link: '/electron/electron-intro' }
+            { text: 'electron进程与通信', link: '/electron/electron-intro' },
+            { text: 'electron更新', link: '/electron/electron-update' }
+          ]
+        }
+      ],
+      '/flvjs/': [
+        {
+          text: 'flv.js',
+          items: [
+            { text: 'flv.js的简单使用', link: '/flvjs/flvjs-intro' }
           ]
         }
       ]
+    },
+    outline: {
+      label: '页面导航'
     },
 
     socialLinks: [

@@ -105,6 +105,11 @@ const routes: RouteRecordRaw[] = [
     path: '/tauri/index',
     name: 'tauriIndex',
     component: () => import('@/pages/tauri/index.vue')
+  },
+  {
+    path: '/bdMap/index',
+    name: 'bdMapIndex',
+    component: () => import('@/pages/BDMap/index.vue')
   }
 ]
 
