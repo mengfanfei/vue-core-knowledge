@@ -187,7 +187,9 @@ export default defineConfig({
         {
           text: '面试',
           items: [
-            { text: 'HTML', link: '/interview/html' }
+            { text: 'HTML', link: '/interview/html' },
+            { text: '浏览器', link: '/interview/browser'},
+            { text: 'CSS', link: '/interview/css'}
           ]
         }
       ]
