@@ -192,6 +192,14 @@ export default defineConfig({
             { text: 'CSS', link: '/interview/css'}
           ]
         }
+      ],
+      '/rust/': [
+        {
+          text: 'Rust',
+          items: [
+            { text: '基础知识', link: '/rust/rust-intro' }
+          ]
+        }
       ]
     },
     outline: {
