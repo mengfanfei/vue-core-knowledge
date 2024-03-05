@@ -109,7 +109,12 @@ const routes: RouteRecordRaw[] = [
   {
     path: '/bdMap/index',
     name: 'bdMapIndex',
-    component: () => import('@/pages/BDMap/index.vue')
+    component: () => import('@/pages/BDmap/index.vue')
+  },
+  {
+    path: '/socket/chat',
+    name: 'Chat',
+    component: () => import('@/pages/socket/index.vue')
   }
 ]
 

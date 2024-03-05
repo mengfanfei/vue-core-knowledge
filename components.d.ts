@@ -11,13 +11,18 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     ACol: typeof import('ant-design-vue/es')['Col']
     ADivider: typeof import('ant-design-vue/es')['Divider']
+    AInput: typeof import('ant-design-vue/es')['Input']
     ARow: typeof import('ant-design-vue/es')['Row']
     BarChart: typeof import('./src/components/chartModules/BarChart/BarChart.vue')['default']
+    BaseContainer: typeof import('./src/components/screen/baseContainer.vue')['default']
+    BaseHeader: typeof import('./src/components/screen/baseHeader.vue')['default']
+    BaseResizeFrame: typeof import('./src/components/frames/BaseResizeFrame.vue')['default']
     Charts: typeof import('./src/components/Charts.vue')['default']
     ChartType: typeof import('./src/components/ChartType.vue')['default']
     ChoicePosition: typeof import('./src/components/choicePosition/index.vue')['default']
     FlvVideo: typeof import('./src/components/FlvVideo.vue')['default']
     PieChart: typeof import('./src/components/chartModules/PieChart/PieChart.vue')['default']
+    ResizeFrame: typeof import('./src/components/frames/ResizeFrame.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

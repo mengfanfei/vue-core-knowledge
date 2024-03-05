@@ -15,6 +15,7 @@
       <button>three.js</button>
       <button @click="handleClick('tauri/index')">Tauri</button>
       <button @click="handleClick('bdMap/index')">百度地图</button>
+      <button @click="handleClick('socket/chat')">聊天室</button>
     </div>
   </div>
 </template>
