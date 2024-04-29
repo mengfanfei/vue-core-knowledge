@@ -109,7 +109,8 @@ export default defineConfig({
             { text: '在微信网页与浏览器网页中尝试打开APP的综合实例', link: '/vue/h5-open-app'},
             { text: 'iframe高度自适应', link: '/vue/iframe-resizer'},
             { text: '导出与下载', link: '/vue/export-download'},
-            { text: '带缩略图的轮播图', link: '/vue/thumbs-swiper'}
+            { text: '带缩略图的轮播图', link: '/vue/thumbs-swiper'},
+            { text: 'editor富文本编辑器', link: '/vue/editor'},
           ]
         }
       ],
