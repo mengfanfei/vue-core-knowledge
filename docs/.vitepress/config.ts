@@ -111,6 +111,7 @@ export default defineConfig({
             { text: '导出与下载', link: '/vue/export-download'},
             { text: '带缩略图的轮播图', link: '/vue/thumbs-swiper'},
             { text: 'editor富文本编辑器', link: '/vue/editor'},
+            { text: 'scale缩放适配FireFox', link: '/vue/fix-firefox'},
           ]
         }
       ],
