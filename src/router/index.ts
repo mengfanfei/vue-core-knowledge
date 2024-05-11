@@ -102,6 +102,11 @@ const routes: RouteRecordRaw[] = [
     component: () => import('@/pages/charts/echarts.vue')
   },
   {
+    path: '/charts/echarts-map',
+    name: 'echarts',
+    component: () => import('@/pages/charts/echarts-map.vue')
+  },
+  {
     path: '/tauri/index',
     name: 'tauriIndex',
     component: () => import('@/pages/tauri/index.vue')

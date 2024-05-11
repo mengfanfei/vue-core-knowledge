@@ -10,7 +10,19 @@
     </div>
     <div>
       <button @click="handleClick('canvas')">canvas</button>
-      <button @click="handleClick('charts/echarts')">Echarts</button>
+      <a-dropdown :arrow="{ pointAtCenter: true }">
+        <button @click="handleClick('charts/echarts')">Echarts</button>
+        <template #overlay>
+          <a-menu>
+            <a-menu-item>
+              <router-link to="/charts/echarts">bar，pie</router-link>
+            </a-menu-item>
+            <a-menu-item>
+              <router-link to="/charts/echarts-map">echarts-map</router-link>
+            </a-menu-item>
+          </a-menu>
+        </template>
+      </a-dropdown>
       <button>webGL</button>
       <button>three.js</button>
       <button @click="handleClick('tauri/index')">Tauri</button>
