@@ -103,7 +103,7 @@ const routes: RouteRecordRaw[] = [
   },
   {
     path: '/charts/echarts-map',
-    name: 'echarts',
+    name: 'echartsMap',
     component: () => import('@/pages/charts/echarts-map.vue')
   },
   {

@@ -167,7 +167,10 @@ export default defineConfig({
             { text: 'uniapp Tips', link: '/uni-app/uniapp-tip'},
             { text: '搜索+搜索历史+热门搜索+联想', link: '/uni-app/uniapp-search'},
             { text: '监听页面滚动显隐tab栏', link: '/uni-app/uniapp-pageScroll'},
-            { text: 'uniapp page hooks', link: '/uni-app/uniapp-pageHooks'}
+            { text: 'uniapp page hooks', link: '/uni-app/uniapp-pageHooks'},
+            { text: 'uniapp 瀑布流', link: '/uni-app/uniapp-waterfall'},
+            { text: 'uniapp 返回按钮', link: '/uni-app/uniapp-back'},
+            { text: 'uniapp 普通选择器', link: '/uni-app/uniapp-option-picker'},
           ]
         }
       ],
