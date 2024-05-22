@@ -19,7 +19,12 @@ export interface MapDataOptions {
   pieces?: any[],
   zoom?: number,
   min?: number,
-  max?: number
+  max?: number,
+  color: string[],
+  baseColor: string,
+  borderColor: string,
+  labelColor?: string,
+  labelFontSize?: string,
 }
 
 export function getOptions(data: MapDataOptions): MapOption {
@@ -33,16 +38,7 @@ export function getOptions(data: MapDataOptions): MapOption {
       max: data.max,
       calculable: true,
       inRange: {
-        color: [
-          '#93f2fe',
-          '#ace5ff',
-          '#42c4ff',
-          '#a8cfff',
-          '#81b9ff',
-          '#4296ff',
-          '#0272ff',
-          '#064CDD',
-        ]
+        color: data.color
       },
       showLabel: true,
       pieces: data.pieces,
@@ -53,8 +49,8 @@ export function getOptions(data: MapDataOptions): MapOption {
       zlevel: 5,
       label: {
         show: true,
-        fontSize: '10',
-        color: '#fff',
+        fontSize: data.labelFontSize || '10',
+        color: data.labelColor || '#fff',
         formatter(params) {
           return '{dot|} ' + params.name
         },
@@ -69,8 +65,8 @@ export function getOptions(data: MapDataOptions): MapOption {
       },
       itemStyle: {
         borderWidth: 1,
-        borderColor: '#9ff7ff',
-        areaColor: '#A8CFFF',
+        borderColor: data.borderColor,
+        areaColor: data.baseColor,
       }
     },
     {
@@ -83,8 +79,8 @@ export function getOptions(data: MapDataOptions): MapOption {
       itemStyle: {
         borderWidth: 1,
         borderColor: 'transparent',
-        areaColor: '#A8CFFF',
-        shadowColor: '#A8CFFF',
+        areaColor: data.baseColor,
+        shadowColor: data.baseColor,
         shadowOffsetX: 6,
         shadowOffsetY: 8,
         shadowBlur: 1

@@ -325,7 +325,10 @@ const mapDataOptions = reactive<MapDataOptions>({
   seriesData: [],
   min: 0,
   max: 3000,
-  zoom: 1.2
+  zoom: 1.2,
+  color: ['#00c7ff','#006edd', '#003399'],
+  baseColor: '#A8CFFF',
+  borderColor: '#9ff7ff',
 })
 
 onMounted(() => {
