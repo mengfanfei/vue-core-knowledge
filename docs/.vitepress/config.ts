@@ -123,6 +123,7 @@ export default defineConfig({
             { text: '封装基础echarts组件', link: '/Echarts/vue/chartType' },
             { text: '封装某一类型的组件(柱状图)', link: '/Echarts/vue/barChart'},
             { text: '封装某一类型的组件(饼图)', link: '/Echarts/vue/pieChart'},
+            { text: '封装Echarts地图组件', link: '/Echarts/vue/mapChart'},
           ]
         },
         {
