@@ -112,6 +112,7 @@ export default defineConfig({
             { text: '带缩略图的轮播图', link: '/vue/thumbs-swiper'},
             { text: 'editor富文本编辑器', link: '/vue/editor'},
             { text: 'scale缩放适配FireFox', link: '/vue/fix-firefox'},
+            { text: '列表页状态留存', link: '/vue/list-keep-state'},
           ]
         }
       ],
