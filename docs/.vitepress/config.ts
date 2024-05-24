@@ -54,6 +54,12 @@ export default defineConfig({
         ]
       },
       {
+        text: '服务端',
+        items: [
+          { text: 'nestjs', link: '/nestjs/nestjs-intro'}
+        ]
+      },
+      {
         text: '运维',
         items: [
           { text: 'DevOps', link: '/ops/DevOps' },
